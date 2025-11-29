@@ -1,4 +1,4 @@
 # Test Page  
 
-$x+y=2$
+*Equation* $x+y=2$
 
