@@ -68,4 +68,21 @@
         border: 1px solid #30363d;
         overflow-x: auto;
     }
+
+    /* --- 0. LAYOUT OVERRIDES (NEW) --- */
+    /* This targets the main wrapper of standard GitHub themes */
+    .container, .wrapper, #main_content, .main-content {
+        max-width: 1200px !important; /* Increase width (Standard is usually ~800px) */
+        /* OR use '90%' if you want it to stretch with the screen size */
+    }
+
+    /* --- IMAGES & SVGS --- */
+    img, svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto; 
+    }
+
+    /* ... (Rest of your existing CSS) ... */
 </style>
