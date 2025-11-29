@@ -10,13 +10,27 @@
   };
 </script>
 
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 
+
 <style>
+    /* --- LAYOUT OVERRIDES --- */
+    /* Expands the page width so code isn't squished */
+    .container, .wrapper, #main_content, .main-content {
+        max-width: 1200px !important; 
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     /* --- IMAGES & SVGS --- */
-    /* Centers images and prevents them from overflowing on mobile */
+    /* Centers images and prevents overflow */
     img, svg {
         max-width: 100%;
         height: auto;
@@ -25,23 +39,23 @@
     }
 
     /* --- TABLES (Pandas Style) --- */
-    /* Makes markdown tables look like professional dataframes */
+    /* Makes tables look like DataFrames */
     table {
         border-collapse: collapse;
         width: 100%;
         margin: 20px 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
         font-size: 0.9em;
-        display: block;      /* Adds scrollbar for wide tables on mobile */
-        overflow-x: auto;    /* Adds scrollbar for wide tables on mobile */
+        display: block;      
+        overflow-x: auto;    /* Adds scrollbar for wide tables */
     }
     
     table th {
-        background-color: #24292e; /* Dark header like GitHub */
+        background-color: #24292e; 
         color: #ffffff;
         text-align: left;
         padding: 12px 15px;
-        white-space: nowrap; /* Keeps headers on one line */
+        white-space: nowrap; 
     }
     
     table td {
@@ -50,36 +64,23 @@
     }
     
     table tbody tr:nth-of-type(even) {
-        background-color: #f6f8fa; /* Zebra striping */
+        background-color: #f6f8fa; 
     }
 
     /* --- CODE BLOCKS --- */
- 
-    /* Box styling for the code container */
+    /* Force monospace font */
+    pre, code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 0.95em; /* Slightly larger text */
+    }
+    
+    /* The Box Styling */
     pre {
-        background-color: #0d1117; 
-        border-radius: 6px;       /* Keeps corners rounded. Set to 0 if you want sharp corners */
-        padding: 16px;
-        border: none !important;  /* <--- CHANGED: Removes the outline/frame */
-        box-shadow: none;         /* <--- ADDED: Ensures no shadow "glow" appears */
-        overflow-x: auto;
+        background-color: #0d1117; /* Dark background */
+        border-radius: 8px;        /* Rounded corners */
+        padding: 20px;
+        border: none !important;   /* REMOVED THE FRAME */
+        box-shadow: none; !important;  /* REMOVED SHADOW */
+        overflow-x: auto;          /* Scrollbar if code is too long */
     }
-
-
-    /* --- 0. LAYOUT OVERRIDES (NEW) --- */
-    /* This targets the main wrapper of standard GitHub themes */
-    .container, .wrapper, #main_content, .main-content {
-        max-width: 1200px !important; /* Increase width (Standard is usually ~800px) */
-        /* OR use '90%' if you want it to stretch with the screen size */
-    }
-
-    /* --- IMAGES & SVGS --- */
-    img, svg {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 20px auto; 
-    }
-
-    /* ... (Rest of your existing CSS) ... */
 </style>
