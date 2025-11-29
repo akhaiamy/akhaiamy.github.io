@@ -59,15 +59,16 @@
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
         font-size: 0.9em;
     }
-    
     /* Box styling for the code container */
     pre {
-        background-color: #0d1117; /* Dark background matching the highlight theme */
-        border-radius: 6px;
+        background-color: #0d1117; 
+        border-radius: 6px;       /* Keeps corners rounded. Set to 0 if you want sharp corners */
         padding: 16px;
-        border: 1px solid #30363d;
+        border: none !important;  /* <--- CHANGED: Removes the outline/frame */
+        box-shadow: none;         /* <--- ADDED: Ensures no shadow "glow" appears */
         overflow-x: auto;
     }
+
 
     /* --- 0. LAYOUT OVERRIDES (NEW) --- */
     /* This targets the main wrapper of standard GitHub themes */
